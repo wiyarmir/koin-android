@@ -56,7 +56,7 @@ To start your module, you must build it this way:
 val myContext = Koin().init(*applicationInstance*).build(MyModule::class)
 ```
 
-This will return a context on which you will get your components isntances. Don't forget to use the `init()` step in this build, else you won't be able to load your AndroidModule. On Android, the general way is to build it in our Application class, but it will be tricky to retrieve your Koin context from Android. 
+This will return a context on which you will get your components instances. Don't forget to use the `init()` step in this build, else you won't be able to load your AndroidModule. On Android, the general way is to build it in our Application class, but it will be tricky to retrieve your Koin context from Android. 
 
 Koin proposes a [KoinApplication](https://github.com/Ekito/koin-android/blob/master/koin-android/src/main/kotlin/org/koin/android/KoinApplication.kt) and a [KoinMultiDexApplication](https://github.com/Ekito/koin-android/blob/master/koin-android/src/main/kotlin/org/koin/android/KoinMultiDexApplication.kt) to help easily setup your context & get it from everywhere (thanks to [Kotlin extensions](https://github.com/Ekito/koin-android/blob/master/koin-android/src/main/kotlin/android/app/AndroidExt.kt)):
 
@@ -74,7 +74,7 @@ class MainApplication : KoinApplication(MyModule::class) {
 By using these KoinApplication class, your module will be build at `onCreate()` phase and you will be able to use the Koin Android extensions.
 
 
-### Just get Koin
+        ### Just get Koin
 
 Once you have your Koin context, simply get your component like this:
 
